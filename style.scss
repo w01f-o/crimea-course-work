@@ -198,7 +198,7 @@ body {
 
 .social {
   border-bottom: 2px solid var(--blackColor);
-  padding: 8px 0;
+  padding: 36px;
 
   &__links {
     display: flex;
@@ -224,10 +224,29 @@ body {
 }
 
 .places {
-  padding: 40px 20px 20px;
-
   &__row {
     display: flex;
+  }
+
+  &__link {
+    &_active {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        right: 105%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 7px;
+        height: 7px;
+        background: var(--blackColor);
+        border-radius: 50%;
+
+        @media (max-width: 976px) {
+          right: 108%;
+        }
+      }
+    }
   }
 
   &__col {
@@ -249,6 +268,7 @@ body {
       flex-direction: column;
       gap: 28px;
       width: 80%;
+      padding-top: 40px;
 
       @media (max-width: 1200px) {
         width: 70%;
@@ -265,12 +285,18 @@ body {
     flex-direction: column;
     gap: 24px;
     list-style: none;
-    padding: 38px 16px;
+    padding: 38px 36px;
     height: 100%;
 
     font: {
       size: 18px;
       weight: 500;
+    }
+
+    li:last-child {
+      .places__link {
+        text-decoration: none;
+      }
     }
   }
 
@@ -363,7 +389,7 @@ body {
     display: block;
   }
 
-  $transitionTime: .2s;
+  $transitionTime: 0.2s;
 
   &__button {
     position: fixed;
@@ -435,7 +461,6 @@ body {
     width: 50vw;
     height: 100vh;
     transition: $transitionTime;
-    padding: 30px 20px;
     background: var(--whiteColor);
     overflow: auto;
     @media (max-width: 576px) {
@@ -445,25 +470,16 @@ body {
 }
 
 @media (max-width: 1400px) {
-
 }
 
 @media (max-width: 1200px) {
-
 }
 
 @media (max-width: 992px) {
-
 }
 
 @media (max-width: 768px) {
-
 }
 
 @media (max-width: 576px) {
-
 }
-
-
-
-
