@@ -245,7 +245,7 @@ body {
   font-size: 18px;
   font-weight: 500;
 }
-.places__list li:last-child .places__link {
+.places__list li:nth-last-child(-n+2) .places__link {
   text-decoration: none;
 }
 .places__nav {
